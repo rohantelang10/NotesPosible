@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1919.731" height="1081.203" viewBox="0 0 1919.731 1081.203">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffbf00"/>
+      <stop offset="0.623" stop-color="#fdd12c"/>
+      <stop offset="1" stop-color="#f9f586" stop-opacity="0.302"/>
+    </linearGradient>
+  </defs>
+  <path id="login_signup_lower_wave" data-name="login_signup lower wave" d="M-4840,713.2s77.19,116.811,190.751,119.5,259.915-80.2,345.783-56.768,189.1,22.76,290.91,0,116.351-47,164.831-122.143,92.111-169.679,72.719-269.062-83.152-267.005,55.752-432.253c21.229-25.255,54.265-44.194,94.756-58.043,239.249,1.509,704.229.6,704.229.6V975.3L-4840,975.637Z" transform="translate(4840 105.566)" opacity="0.75" fill="url(#linear-gradient)"/>
+</svg>
