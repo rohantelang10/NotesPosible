@@ -1,0 +1,97 @@
+body{
+    margin: 0px;
+    min-height: 100vh;
+}
+
+/* @media screen and (min-width: 768px){
+    body{
+        background-image: url("login_signup lower wave.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0px;
+        min-height: 100vh;
+    }
+}
+
+@media screen and (max-width: 767px){
+    margin: 0px;
+    min-height: 100vh;
+} */
+
+
+/* .Waves{
+    position: absolute;
+    bottom: 0%;
+} */
+
+/* #wave-lower{
+    z-index: 1;
+}
+
+#wave-upper{
+    z-index: 2;
+} */
+
+/* For larger screen */
+@media screen and (min-width: 768px){
+
+    /* #wave-lower{
+        position: absolute;
+        bottom: 0%;
+        visibility: visible;
+        object-fit: fit;
+    } */
+
+    #wave-upper{
+        position: absolute;
+        bottom: 0%;
+        visibility: visible;
+    }
+}
+
+/* for small screen */
+@media screen and (max-width: 767px){
+    /* .Waves{
+        position: relative;
+        bottom: 0%;
+    } */
+
+    /* #wave-lower{
+        position: absolute;
+        top: 0%;
+        visibility: hidden;
+    } */
+
+    #wave-upper{
+        position: relative;
+        bottom: 0%;
+        visibility: visible;
+    }
+}
+
+/* For larger screen */
+@media screen and (min-width: 768px){
+    .row{
+        position: absolute;
+        left: 0px;
+        z-index: 2;
+        width: 100vw;
+        /* margin-left: 10vw; */
+    }
+}
+
+/* for small screen */
+@media screen and (max-width: 767px){
+    .row{
+        position: relative;
+        left: 0px;
+        z-index: 2;
+        width: 100vw;
+        /* margin-left: 10vw; */
+    }
+}
+
+
+.Form-Heading{
+    text-align: center;;
+}
