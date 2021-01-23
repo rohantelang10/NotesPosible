@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.TopBarImages {
+    position: relative;
+    height: 40px;
+}
+
+#hambergermenuimg {
+    margin-left: 12px;
+    width: 30px;
+}
+
+#logoimg {
+    margin-left: 70px;
+}
+
+
+#avtarimg img {
+    position: absolute;
+    top: 0px;
+    right: 3%;
+    border-radius: 70px;
+    height: 45px;
+}
+
+@media screen and (max-width: 767px) {
+    .TopBar {
+        position: fixed;
+        background-color: white;
+        height: 100px;
+        width: 100vw;
+        padding: 5px;
+        z-index: 2;
+    }
+}
+
+
+
+.document-info .image img{
+    z-index: -1;
+    position: absolute;
+}
+
+.document-info .info h1,h3{
+    position: relative;
+    color: gray;
+    text-align: left;
+    font-weight: 600;
+    line-height: 2.2;
+    justify-content: left;
+    text-align: left;
+}
+
+.reader{
+    background-color: rgb(218, 214, 208);
+    height: 77vh;
+}
+
+.download button{
+    height: 50px;
+    width: 200px;
+    border-radius: 100px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
