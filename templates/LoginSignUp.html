@@ -11,7 +11,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="LoginSignUp.css">
+  <link rel="stylesheet" href="{{ url_for('static',filename='Css/LoginSignUp.css') }}">
 </head>
 
 
@@ -20,12 +20,12 @@
     <div class="col-12 col-md-5 SignUp-Box mb-5">
       <h1 class="Form-Heading">SignUp</h1>
       <div class="FormBody">
-        <img class="col-12 col-md-5 FormBG SignUpBG" src="Signup_BG.svg" alt="">
+        <img class="col-12 col-md-5 FormBG SignUpBG" src="{{ url_for('static',filename='Images/Signup_BG.svg') }}" alt="">
         <form action="#">
 
           <div class="form-group col-12" style="margin-left:0px;">
             <label for="signup_full_name_input"> Full Name </label>
-            <input type="text" class="form-control" id="signup_first_name_input" placeholder="Your full name here...">
+            <input type="text" class="form-control" id="signup_full_name_input" placeholder="Your full name here...">
           </div>
 
           <div class="form-group col-12">
@@ -56,7 +56,7 @@
     <div class="col-12 col-md-5 Login-Box">
       <h1 class="Form-Heading">Login</h1>
       <div class="FormBody">
-        <img class="col-12 col-md-5 FormBG LogInBG" src="login_BG.svg" alt="">
+        <img class="col-12 col-md-5 FormBG LogInBG" src="{{ url_for('static',filename='Images/login_BG.svg') }}" alt="">
 
         <form action="#" method="#">
           <div class="form-group col-12">
@@ -76,8 +76,8 @@
   </div>
 
 
-  <!-- <img class="img-fluid Waves" id="wave-lower" src="login_signup lower wave.svg"> -->
-  <img class="img-fluid Waves" id="wave-upper" src="login_signup upper wave.svg">
+  <!-- <img class="img-fluid Waves" id="wave-lower" src="{{ url_for('static',filename='Images/login_signup lower wave.svg') }}"> -->
+  <img class="img-fluid Waves" id="wave-upper" src="{{ url_for('static',filename='Images/login_signup upper wave.svg') }}">
 
 
   <div class="BubbleLayer">
