@@ -49,20 +49,20 @@
             </div>
             {% if extension=='pdf' %}
             <div class="col-12 col-md-6 reader">
-                <embed src="{{ url_for('downloadfile', file='_'.join((doc_data[0].Path).split('_')[1:])) }}" type="application/pdf" width = "100%" height = "100%">
+                <embed src="{{ url_for('downloadfile', file='_'.join((doc_data[0].Path).split('_')[1:]), sno=doc_data[0].SNo) }}" type="application/pdf" width = "100%" height = "100%">
             </div>
 
             {% else %}
             <div class="col-12 col-md-6 reader">
             <div class="download center">
                 <h4>Click on the download button below, to download the file!<br></h4>
-                <a href="{{ url_for('downloadfile', file='_'.join((doc_data[0].Path).split('_')[1:])) }}" target="blank"><button class="btn btn-warning my-4 mx-3" type="button">Download</button></a>
+                <a href="{{ url_for('downloadfile', file='_'.join((doc_data[0].Path).split('_')[1:]), sno=doc_data[0].SNo) }}" target="blank"><button class="btn btn-warning my-4 mx-3" type="button">Download</button></a>
             </div>
             </div>
             {% endif %}
             {% if extension=='pdf' %}
             <div class="download">
-                <a href="{{ url_for('downloadfile', file='_'.join((doc_data[0].Path).split('_')[1:])) }}" target="blank"><button class="btn btn-warning my-4 mx-3" type="button">Download</button></a>
+                <a href="{{ url_for('downloadfile', file='_'.join((doc_data[0].Path).split('_')[1:]), sno=doc_data[0].SNo) }}" target="blank"><button class="btn btn-warning my-4 mx-3" type="button">Download</button></a>
             </div>
             {% endif %}
         </div>

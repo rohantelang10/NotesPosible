@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="MyUploads.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='Css/MyUploads.css') }}">
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -20,64 +20,54 @@
 
 <body>
     <div class="TopBar">
-        <img src="Hamberger menu.svg" class="TopBarImages" id="hambergermenuimg" alt="">
-        <img src="Logo.svg" class="TopBarImages" id="logoimg" alt="">
+        <img src="{{ url_for('static',filename='Images/Hamberger menu.svg') }}" class="TopBarImages" id="hambergermenuimg" alt="">
+        <a href="/">
+            <img src="{{ url_for('static',filename='Images/Logo.svg') }}" class="TopBarImages" id="logoimg" alt="">
+        </a>
         <form action="#" id="SearchBar">
             <input type="text" placeholder="Search..." id="SearchBarfield">
             <button type="submit" class="d-flex justify-content-center" id="searchbutton">
-                <img src="find icon.svg" alt="" id="searchbuttonimage">
+                <img src="{{ url_for('static',filename='Images/find icon.svg') }}" alt="" id="searchbuttonimage">
             </button>
         </form>
-        <div id="avtarimg">
-            <!-- DO NOT DELETE -->
-        </div>
+        <img src="{{session['profilepicture']}}" alt=""  id="avtarimg">
     </div>
     <div class="SideBar">
         <div class="parentbox p-0 ">
             <div class="container d-flex justify-content-center mt-5">
-                <img src="home_icon.svg" class="sidebarimg" alt="">
+                <a href="/">
+                    <img src="{{ url_for('static',filename='Images/home_icon.svg') }}" class="sidebarimg" alt="">
+                </a>
             </div>
             <div class="container d-flex justify-content-center mt-5">
-                <img src="subscription_icon.svg" class="sidebarimg" alt="">
+                <img src="{{ url_for('static',filename='Images/subscription_icon.svg') }}" class="sidebarimg" alt="">
             </div>
         </div>
     </div>
 
+    {% for item in data %}
     <div class="row list-display d-flex justify-content-center .align-items-center p-1 my-2">
-        <P class="ListItem Sno col-sm-1 align-self-center m-0">1</P>
+        <P class="ListItem Sno col-sm-1 align-self-center m-0">{{ loop.index }}</P>
 
-        <P class="ListItem DocName col-sm-5 align-self-center m-0">Falana dhimkana naam</P>
+        <P class="ListItem DocName col-sm-5 align-self-center m-0">{{item.DocumentName}}</P>
 
-        <P class="ListItem DocType col-sm-1 align-self-center m-0">.doc</P>
+        <P class="ListItem DocType col-sm-1 align-self-center m-0">{{((item.Path).split(".")[-1]).lower()}}</P>
 
-        <P class="ListItem DocDate col-sm-2 align-self-center m-0">22-11-21</P>
+        <P class="ListItem DocDate col-sm-2 align-self-center m-0">{{item.UploadDate.strftime("%d/%m/%Y")}}</P>
 
         <div class="ListItem col-sm-2 align-self-center">
-            <button class="DocDelete btn btn-danger">Delete</button>
+            <a href="{{ url_for('deletefile', sno = item.SNo) }}"> <button class="DocDelete btn btn-danger">Delete</button></a>
         </div>
     </div>
-
-    <div class="row list-display d-flex justify-content-center .align-items-center p-1 my-2">
-        <P class="ListItem Sno col-sm-1 align-self-center m-0">1</P>
-
-        <P class="ListItem DocName col-sm-5 align-self-center m-0">Falana dhimkana naam</P>
-
-        <P class="ListItem DocType col-sm-1 align-self-center m-0">.doc</P>
-
-        <P class="ListItem DocDate col-sm-2 align-self-center m-0">22-11-21</P>
-
-        <div class="ListItem col-sm-2 align-self-center">
-            <button class="DocDelete btn btn-danger">Delete</button>
-        </div>
-    </div>
+    {% endfor %}
 
 
-    <script type="text/javascript" src="Home.js"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='Js/Home.js') }}"></script>
 
 </body>
 </html>
 
-    <script type="text/javascript" src="Home.js"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='Js/Home.js') }}"></script>
 
 </body>
 

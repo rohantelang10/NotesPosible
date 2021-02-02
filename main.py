@@ -85,7 +85,7 @@ def authorize():
     r = requests.get(f"https://www.googleapis.com/oauth2/v2/userinfo?access_token={access_token}")
 
     #connection = db.session.connection()
-    print(r.json())
+
 
     result = Userinfo.query.filter_by(Id=r.json()['id']).all()
     resulttype = type(result)
@@ -171,12 +171,27 @@ def docopener(sno):
 
     return render_template('docOpener.html', doc_data=fetch, user=user, extension=((docopener.filename).split(".")[-1]).lower())
 
-@app.route('/downloadfile/<string:file>')
-def downloadfile(file):
+@app.route('/downloadfile/<string:sno>/<string:file>')
+def downloadfile(file, sno):
 
     basedirectory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     path = os.path.join(basedirectory, "NotesPosibleWebsite", "uploads", docopener.folder, docopener.filename)
     return send_file(path, attachment_filename=''.join((docopener.filename).split("_")[1:]))
+
+@app.route('/myuploads')
+def myuploads():
+    fetch = Documentrecord.query.filter_by(Id=session['id']).all()
+    return render_template('MyUploads.html', data=fetch)
+
+@app.route('/deletefile/<string:sno>', methods=['GET', 'POST'])
+def deletefile(sno):
+    fetch = Documentrecord.query.filter_by(SNo=sno).all()
+    basedirectory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    os.remove(os.path.join(basedirectory, "NotesPosibleWebsite", "uploads", fetch[0].Id, fetch[0].Path))
+    row = Documentrecord.query.filter_by(SNo=sno).one()
+    db.session.delete(row)
+    db.session.commit()
+    return redirect(url_for('myuploads'))
 
 @app.route('/logout')
 def logout():
