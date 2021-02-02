@@ -53,11 +53,11 @@ body {
 }
 
 #avtarimg {
-    position: absolute;
-    top: 0px;
+    position: relative;
+    bottom: 0px;
     right: 5%;
     margin-top: 5px;
-    background-color: yellow;
+    /*background-color: yellow;*/
     border-radius: 70px;
     height: 40px;
     width: 40px;

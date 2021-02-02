@@ -33,9 +33,9 @@
         {{session['name']}}
 
         <button type="button" ><a href="/logout">Logout</a></button>
-        <div class="TopBarImages" id="avtarimg">
-            <img src="{{session['profilepicture']}}" alt=""   id="profileimage">
-        </div>
+<!--        <div class="TopBarImages"> &lt;!&ndash; id="avtarimg" &ndash;&gt;-->
+            <img src="{{session['profilepicture']}}" alt=""  id="avtarimg">
+<!--        </div>-->
         <button type="button" ><a href="/documentupload">Upload Document</a></button>
     </div>
     <div class="SideBar">
@@ -53,13 +53,14 @@
 
     <div class="row card-display d-flex justify-content-center p-4">
       <!-- <div class="info-card col-1 col-sm-6 col-md-4 col-lg-2 m-2">
-        
       </div> -->
       {% for item in data %}
-      <div class="info-card d-flex justify-content-center mx-3 my-2">
-        <img src="{{ url_for('static',filename='Images/doc_icon.svg') }}" alt="" class="DocTypeImage">
-        <span class="DocName"> {{item.DocumentName}} <br> {{item.UploadDate}} </span>
 
+      <div class="info-card d-flex justify-content-center mx-3 my-2">
+        <a href = "{{ url_for('docopener', sno=item.SNo) }}">
+        <img src="{{ url_for('static',filename='Images/doc_icon.svg') }}" alt="" class="DocTypeImage">
+        <span class="DocName"> {{item.DocumentName}} <br> {{item.UploadDate.strftime("%d/%m/%Y")}} </span>
+        </a>
       </div>
         {% endfor %}
 

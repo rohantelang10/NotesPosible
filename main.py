@@ -1,7 +1,8 @@
-from flask import Flask, render_template, redirect, session, request, url_for
+from flask import Flask, render_template, redirect, session, request, url_for, send_file
 from authlib.integrations.flask_client import OAuth
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.sql import text
+from werkzeug.utils import secure_filename
+import os
 import requests
 
 # insantiating Flask class object in variable "app" 
@@ -46,6 +47,9 @@ app.secret_key = 'random secret'
 
 #oauth config
 oauth = OAuth(app)
+
+folder = ""
+filename = ""
 
 @app.route('/')
 def index():
@@ -127,9 +131,24 @@ def documentupload():
             Subject = request.form['Subject']
             Year = request.form['Year']
             Semester = request.form['Semester']
-            Path = request.form['UploadDocument']
+            #Path = request.form['UploadDocument']
+            result = Documentrecord.query.all()
+            if len(result)==0:
+                Next_SNo = 1
+            else:
+                Next_SNo = (result[-1].SNo)+1
+            f = request.files['UploadDocument']
+            Path = str(Next_SNo)+'_'+secure_filename(f.filename)
+            basedirectory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            app.config['UPLOAD_FOLDER'] = os.path.join(basedirectory,"NotesPosibleWebsite","uploads",session['id'])
+            if not os.path.exists( app.config['UPLOAD_FOLDER'] ):
+                os.makedirs( app.config['UPLOAD_FOLDER'] )
+
             if Path.split(".")[-1].lower() in ['doc', 'docx', 'txt', 'ppt', 'pptx', 'pdf']:
                 Extension = Path.split(".")[-1]
+
+                f.save(os.path.join(app.config['UPLOAD_FOLDER'], Path))
+                #send_from_directory(app.config['UPLOADER_FOLDER'], Path)
 
                 entry = Documentrecord(Id=Id, DocumentName=DocumentName, Source=Source, StreamCourse=StreamCourse, Subject=Subject, Year=Year, Semester=Semester, Path=Path, Extension=Extension)
                 db.session.add(entry)
@@ -137,8 +156,27 @@ def documentupload():
                 return redirect(url_for('documentupload'))
             else:
                 return "Please upload one of this extension file 'doc', 'docx', 'txt', 'ppt', 'pptx', 'pdf'"
-        return render_template('DocumentUpload.html')
+        return render_template("documentupload.html")
+    else:
+        return "Oops, something went wrong!"
 
+@app.route('/docopener/<string:sno>')
+def docopener(sno):
+    fetch = Documentrecord.query.filter_by(SNo=sno).all()
+    user = Userinfo.query.filter_by(Id=fetch[0].Id).all()
+
+    docopener.folder = fetch[0].Id
+    docopener.filename = fetch[0].Path
+
+
+    return render_template('docOpener.html', doc_data=fetch, user=user, extension=((docopener.filename).split(".")[-1]).lower())
+
+@app.route('/downloadfile/<string:file>')
+def downloadfile(file):
+
+    basedirectory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(basedirectory, "NotesPosibleWebsite", "uploads", docopener.folder, docopener.filename)
+    return send_file(path, attachment_filename=''.join((docopener.filename).split("_")[1:]))
 
 @app.route('/logout')
 def logout():
