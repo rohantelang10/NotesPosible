@@ -56,7 +56,7 @@
       </div> -->
       {% for item in data %}
 
-      <div class="info-card d-flex justify-content-center mx-3 my-2">
+      <div class="info-card d-flex justify-content-center mx-5 my-2">
         <a href = "{{ url_for('docopener', sno=item.SNo) }}">
         <img src="{{ url_for('static',filename='Images/doc_icon.svg') }}" alt="" class="DocTypeImage">
         <span class="DocName"> {{item.DocumentName}} <br> {{item.UploadDate.strftime("%d/%m/%Y")}} </span>
