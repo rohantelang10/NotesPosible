@@ -1,0 +1,237 @@
+body {
+    background-color: #F6F6F6;
+    overflow-x: hidden;
+}
+
+/* for large screen */
+
+@media screen and (min-width: 768px) {
+    .TopBar {
+        position: fixed;
+        background-color: white;
+        height: 50px;
+        width: 100vw;
+        padding: 5px;
+        z-index: 2;
+    }
+}
+
+/* for small screen */
+
+@media screen and (max-width: 767px) {
+    .TopBar {
+        position: fixed;
+        background-color: white;
+        height: 100px;
+        width: 100vw;
+        padding: 5px;
+        z-index: 2;
+    }
+}
+
+/* .TopBar{
+    position: fixed;
+    background-color:white;
+    height: 50px;
+    width: 100vw;
+    padding: 5px;
+    z-index: 2;
+} */
+
+.TopBarImages {
+    position: relative;
+    height: 40px;
+}
+
+#hambergermenuimg {
+    margin-left: 12px;
+    width: 30px;
+}
+
+#logoimg {
+    margin-left: 70px;
+}
+
+#avtarimg {
+    position: absolute;
+    top: 0px;
+    right: 5%;
+    margin-top: 5px;
+    background-color: yellow;
+    border-radius: 70px;
+    height: 40px;
+    width: 40px;
+}
+
+/* for small screen */
+@media screen and (max-width: 767px) {
+    #SearchBar {
+        position: absolute;
+        top: 50px;
+        left: 5%;
+        background-color: transparent;
+        height: 50px;
+        width: 90%;
+        display: inline-flex;
+    }
+}
+
+/* for large screen */
+
+@media screen and (min-width: 768px) {
+    #SearchBar {
+        position: absolute;
+        top: 0px;
+        left: 30%;
+        background-color: transparent;
+        height: 50px;
+        width: 40%;
+        display: inline-flex;
+    }
+}
+
+#SearchBarfield {
+    position: relative;
+    height: 40px;
+    width: 85%;
+    margin-top: 5px;
+    background-color: whitesmoke;
+    border: 1px solid grey;
+    border-radius: 5px 0px 0px 5px;
+}
+
+#searchbutton {
+    position: relative;
+    padding: 0px;
+    width: 15%;
+    height: 40px;
+    margin-top: 5px;
+    border: 1px solid grey;
+    border-radius: 0px 5px 5px 0px;
+}
+
+#searchbuttonimage {
+    height: 20px;
+    width: 20px;
+    margin-top: 10px;
+}
+
+.SideBar {
+    background-color: white;
+    position: fixed;
+    z-index: 1;
+    width: 60px;
+    height: 100vh;
+}
+
+/* @media screen and (min-width: 768px)
+@media screen and (max-width: 767px) */
+
+/* for ls */
+@media screen and (min-width: 768px){
+    .parentbox{
+        margin-top: 100px;
+    }
+}
+
+/* for ss */
+@media screen and (max-width: 767px){
+    .parentbox{
+        margin-top: 150px;
+    }
+}
+
+
+.sidebarimg{
+    width: 40px;
+    height:40px;
+
+}
+
+
+
+
+/* for large screen */
+@media screen and (min-width: 768px){
+    .card-display{
+        position: relative;
+        top: 70px;
+        left: 70px;
+        width: calc(100% - 80px);
+        /* background-color: powderblue;  */
+        margin-left: 0px;
+    }
+}
+
+/* for small screen */
+@media screen and (max-width: 767px) {
+    .card-display{
+        position: relative;
+        top: 120px;
+        left: 70px;
+        width: calc(100% - 80px);
+        /* background-color: powderblue; */
+        margin-left: 0px;  
+    }
+}
+
+
+.info-card{
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.3);
+    height : 150px;
+    /* min-width: 250px;
+    max-width: 300px; */
+    width: 250px;
+
+    /* isme shadow lagani h */
+}
+
+
+.MentorImage{
+    position: relative;
+    top: -25px;
+    left: -35px;
+    width: 75px;
+    height: 75px;
+    border-radius: 50px;
+    /* isme shadow lagani h */
+}
+
+
+.MentorName{
+    position: relative;
+    /* background-color: rgba(255, 191, 0, 0.15); */
+    color: gray;
+    font-weight: bold;
+    text-align: left;
+    font-size: 20px;  
+}
+
+.FollowerHeading{
+    position: relative;
+    /* background-color: rgba(255, 191, 0, 0.15); */
+    color: #FFBF00;;
+    font-weight: bold;
+    text-align: left;
+    font-size: 15px;
+}
+
+.TotalFollower{
+    position: relative;
+    /* background-color: rgba(255, 191, 0, 0.15); */
+    color: gray;
+    font-weight: bold;
+    text-align: left;
+    font-size: 15px;
+}
+
+.ViewProfileButton{
+    background-color: #FFBF00;;
+    border-radius: 5px;
+    border: 0px solid transparent;
+
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
