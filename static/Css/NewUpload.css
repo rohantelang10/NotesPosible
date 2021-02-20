@@ -1,0 +1,151 @@
+body {
+    background-color: #F6F6F6;
+    overflow-x: hidden;
+}
+
+/* for large screen */
+
+.TopBar {
+    position: fixed;
+    background-color: white;
+    height: 50px;
+    width: 100vw;
+    padding: 5px;
+    z-index: 2;
+}
+
+/* .TopBar{
+    position: fixed;
+    background-color:white;
+    height: 50px;
+    width: 100vw;
+    padding: 5px;
+    z-index: 2;
+} */
+
+.TopBarImages {
+    position: relative;
+    height: 40px;
+}
+
+#hambergermenuimg {
+    margin-left: 12px;
+    width: 30px;
+}
+
+#logoimg {
+    margin-left: 70px;
+}
+
+#avtarimg {
+    position: absolute;
+    top: 0px;
+    right: 5%;
+    margin-top: 5px;
+    background-color: yellow;
+    border-radius: 70px;
+    height: 40px;
+    width: 40px;
+}
+
+.SideBar {
+    background-color: white;
+    position: fixed;
+    z-index: 1;
+    width: 60px;
+    height: 100vh;
+}
+
+
+/* for ls */
+@media screen and (min-width: 768px) {
+    .parentbox {
+        margin-top: 100px;
+    }
+}
+
+/* for ss */
+@media screen and (max-width: 767px) {
+    .parentbox {
+        margin-top: 150px;
+    }
+}
+
+.sidebarimg {
+    width: 40px;
+    height: 40px;
+}
+
+.upload-display {
+    position: relative;
+    top: 70px;
+    left: 70px;
+    width: calc(100% - 80px);
+    /* background-color: powderblue;  */
+    margin-left: 0px;
+}
+
+
+.UploadFormHeading{
+    text-align: center;
+    color: grey;
+    margin-bottom: 15px;
+}
+
+.form-lable{
+    font-weight: bold;
+    color: grey;
+}
+.form-control:focus{
+    border-color: #FFBF00;
+    box-shadow: rgba(255, 191, 0, 0.25) 0px 0px 0px 0.25rem;
+}
+
+.UploadFormSubmit{
+    color: grey;
+    background-color: white;
+    border: 2px solid grey;
+    border-radius: 50px; 
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+}
+
+.UploadFormSubmit:hover{
+    color: white;
+    background-color: #FFBF00;
+    border: 2px solid #FFBF00;
+}
+
+.custom-file {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    margin-bottom: 0;
+}
+
+.custom-file-input {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    margin: 0;
+    opacity: 0;
+}
+
+
+.custom-file-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
