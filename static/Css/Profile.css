@@ -1,0 +1,172 @@
+body {
+    background-color: #F6F6F6;
+    overflow-x: hidden;
+}
+
+
+.TopBar {
+    position: fixed;
+    background-color: white;
+    height: 50px;
+    width: 100vw;
+    padding: 5px;
+    z-index: 2;
+}
+
+
+
+/* .TopBar{
+    position: fixed;
+    background-color:white;
+    height: 50px;
+    width: 100vw;
+    padding: 5px;
+    z-index: 2;
+} */
+
+.TopBarImages {
+    position: relative;
+    height: 40px;
+}
+
+#hambergermenuimg {
+    margin-left: 12px;
+    width: 30px;
+}
+
+#logoimg {
+    margin-left: 70px;
+}
+
+#avtarimg {
+    position: absolute;
+    top: 0px;
+    right: 5%;
+    margin-top: 5px;
+    background-color: yellow;
+    border-radius: 70px;
+    height: 40px;
+    width: 40px;
+}
+
+
+.SideBar {
+    background-color: white;
+    position: fixed;
+    z-index: 1;
+    width: 60px;
+    height: 100vh;
+}
+
+/* @media screen and (min-width: 768px)
+@media screen and (max-width: 767px) */
+
+/* for ls */
+@media screen and (min-width: 768px){
+    .parentbox{
+        margin-top: 100px;
+    }
+}
+
+/* for ss */
+@media screen and (max-width: 767px){
+    .parentbox{
+        margin-top: 150px;
+    }
+}
+
+
+.sidebarimg{
+    width: 40px;
+    height:40px;
+}
+
+
+
+
+/* for large screen */
+@media screen and (min-width: 768px){
+    .Profile-display{
+        position: relative;
+        top: 70px;
+        left: 70px;
+        width: calc(100% - 80px);
+        /* background-color: powderblue;  */
+        margin-left: 0px;
+    }
+}
+
+/* for small screen */
+@media screen and (max-width: 767px) {
+    .Profile-display{
+        position: relative;
+        top: 120px;
+        left: 70px;
+        width: calc(100% - 80px);
+        /* background-color: powderblue; */
+        margin-left: 0px;  
+    }
+}
+
+
+
+.StateContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.ProfilePageProfileImage{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+}
+
+.ProfilePageStatsHeading{
+    color: #FFBF00;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+.ProfilePageStatsNumbers{
+    color: grey;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+
+
+
+.info-card{
+    background-color: rgba(255, 191, 0, 0.15);
+    box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.3);
+    height : 150px;
+    /* min-width: 250px;
+    max-width: 300px; */
+    width: 250px;
+
+    /* isme shadow lagani h */
+}
+
+
+.DocTypeImage{
+    position: relative;
+    top: -25px;
+    left: -35px;
+    width: 50px;
+    height: 70px;
+    /* isme shadow lagani h */
+}
+
+
+.DocName{
+    position: relative;
+    /* background-color: rgba(255, 191, 0, 0.15); */
+    color: gray;
+    font-weight: bold;
+    text-align: left;
+    font-size: 20px;
+}
