@@ -1,33 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notespossible</title>
+    <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='Css/DocumentUpload.css') }}"">
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
+
 <body>
+    <div class="TopBar">
+        <img src="{{ url_for('static',filename='Images/Hamberger menu.svg') }}"" class="TopBarImages" id="hambergermenuimg" alt="">
+        <img src="{{ url_for('static',filename='Images/Logo.svg') }}" class="TopBarImages" id="logoimg" alt="">
+        <img class="TopBarImages" id="avtarimg" src="{{ url_for('static',filename='Images/SubscriptionTest.jpg') }}">
+    </div>
+    <div class="SideBar">
+        <div class="parentbox p-0 ">
+            <div class="container d-flex justify-content-center mt-5">
+                <img src="{{ url_for('static',filename='Images/home_icon.svg') }}" class="sidebarimg" alt="">
+            </div>
+            <div class="container d-flex justify-content-center mt-5">
+                <img src="{{ url_for('static',filename='Images/subscription_icon.svg') }}" class="sidebarimg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="row upload-display d-flex justify-content-center p-4">
+        <h1 class="UploadFormHeading"> Upload </h1>
+        <hr class="col-12 col-md-8" style="border: 2px solid grey;">
+
+        <form class="UploadForm col-12 col-md-8" Method="POST" action="/documentupload" enctype="multipart/form-data">
+        <div class="form-group my-4">
+            <label for="new_upload_file_name" class="form-lable">Document Name</label>
+            <input type="text" class="form-control" id="new_upload_file_name" placeholder="Name of the file here..." name="DocumentName">
+            <small id="new_upload_file_name_help" class="form-text text-muted">This name will be displayed as
+                <b>documnet name</b>. The actual file name may be different which depends on your uploading choice.</small>
+        </div>
+        <div class="form-group my-4">
+                <label for="new_upload_file_source" class="form-lable">Source of file</label>
+                <input type="text" class="form-control" id="new_upload_file_source"
+                    placeholder="Name or link of source here..." name="Source">
+                <small id="new_upload_file_name_source" class="form-text text-muted">You need to write from where u have
+                    got the document. In case you have created the document write <b>self-made</b>.</small>
+            </div>
+
+            <div class="form-group my-4">
+                <label for="Stream_Course_name" class="form-lable">Stream /Course</label>
+                <input type="text" class="form-control" id="Stream_Course_name"
+                    placeholder="Name of course or stream of your target audience..." name="StreamCourse">
+                <small id="Stream_Course_name_help" class="form-text text-muted">You must write the name of stream or
+                    course of your <b>target audience</b>. So that public could recognise your document easily.</small>
+            </div>
+
+            <div class="form-group my-4">
+                <label for="Subject_name" class="form-lable">Subject</label>
+                <input type="text" class="form-control" id="Subject_name" placeholder="Name of subject here..."
+                    name="Subject">
+                <small id="Subject_name_help" class="form-text text-muted">You must write the name <b>Subject</b> the
+                    document is realated to.</small>
+            </div>
+
+            <div class="form-group my-4">
+                <label for="Year_name" class="form-lable">Year</label>
+                <input type="text" class="form-control" id="Year_name" placeholder="Enter of year..." name="Year">
+                <small id="Year_name_help" class="form-text text-muted">You must write the Year.For <b>ex- 1st
+                        year</b>.</small>
+            </div>
+
+            <div class="form-group my-4">
+                <label for="Semester_name" class="form-lable">Semester</label>
+                <input type="text" class="form-control" id="Semester_name" placeholder="Enter of semester..."
+                    name="Semester">
+                <small id="Semester_name_help" class="form-text text-muted">You must write the Semester.For <b>ex- 1st
+                        sem</b>.</small>
+            </div>
+
+        <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile" name="UploadDocument">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+
+        <div class="d-flex justify-content-center my-4">
+                <button type="submit" class="UploadFormSubmit"><span class="m-2">Upload Document</span></button>
+            </div>
+    </form>
+    </div>
+
+    <script type="text/javascript" src="{{ url_for('static',filename='Js/Home.js') }}"></script>
+
+    <!-- JavaScript to apply some effect on  -->
+    <script>
+        $(".custom-file-input").on("change", function() {
+          var fileName = $(this).val().split("\\").pop();
+          $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+
+</body>
+
+</html>
+
+
+
+<!--
     <form Method="POST" action="/documentupload" enctype="multipart/form-data">
-        <label>Document Name</label>
-        <input type="text" name="DocumentName"><br>
-
-        <label>Source</label>
-        <input type="text" name="Source"><br>
-
-        <label>StreamCourse</label>
-        <input type="text" name="StreamCourse"><br>
-
-        <label>Subject</label>
-        <input type="text" name="Subject"><br>
-
-        <label>Year</label>
-        <input type="Number" name="Year"><br>
-
-        <label>Semester</label>
-        <input type="Number" name="Semester"><br>
-
         <label>Upload Document</label>
         <input type="file" name="UploadDocument"><br>
 
         <button type="submit" name="Upload">Upload</button>
     </form>
-</body>
-</html>
+ -->

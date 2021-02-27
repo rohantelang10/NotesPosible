@@ -157,7 +157,7 @@ body {
         position: relative;
         top: 70px;
         left: 70px;
-        width: 94vw;
+        width: calc(100% - 80px);
         /* background-color: powderblue;  */
         margin-left: 0px;
     }
@@ -169,9 +169,9 @@ body {
         position: relative;
         top: 120px;
         left: 70px;
-        width: 94vw;
+        width: calc(100% - 80px);
         /* background-color: powderblue; */
-        margin-left: 0px;  
+        margin-left: 0px;
     }
 }
 

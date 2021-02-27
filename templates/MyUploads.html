@@ -55,9 +55,14 @@
 
         <P class="ListItem DocDate col-sm-2 align-self-center m-0">{{item.UploadDate.strftime("%d/%m/%Y")}}</P>
 
-        <div class="ListItem col-sm-2 align-self-center">
+        <div class="ListItem col-sm-1 align-self-center">
+            <a href="{{ url_for('docopener', sno=item.SNo) }}"> <button class="DocDelete btn btn-success">View</button></a>
+        </div>
+
+        <div class="ListItem col-sm-1 align-self-center">
             <a href="{{ url_for('deletefile', sno = item.SNo) }}"> <button class="DocDelete btn btn-danger">Delete</button></a>
         </div>
+
     </div>
     {% endfor %}
 

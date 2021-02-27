@@ -23,7 +23,7 @@
             </a>
 
             <div class="avtarImage" id="avtarimg">
-                <img class="my-3" src="{{ user[0].ProfilePicture }}" alt="">
+                <img class="my-3" src="{{session['profilepicture']}}" alt="">
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
                     <img class="img-fluid" src="{{ url_for('static',filename='Images/undraw_reading_time_gvg0.svg') }}" alt="Backgroud">
                 </div>
                 <div class="info container">
-                    <h1 style="letter-spacing: 3px; font-weight: 700; color: rgb(92, 90, 90);">Computer Architecture</h1>
+                    <h1 style="letter-spacing: 3px; font-weight: 700; color: rgb(92, 90, 90);">{{doc_data[0].DocumentName}}</h1>
 
                     <h3>Contributor - {{user[0].Name}}</h3>
                     <h3>Source - {{doc_data[0].Source}}</h3>
@@ -44,7 +44,7 @@
                     <h3>Subject - {{doc_data[0].Subject}}</h3>
                     <h3>Year - {{doc_data[0].Year}}</h3>
                     <h3>Semester - {{doc_data[0].Semester}}</h3>
-                    <h3>File Name - {{'_'.join((doc_data[0].Path).split('_')[1:])}}</h3>
+                    <!--<h3>File Name - {{'_'.join((doc_data[0].Path).split('_')[1:])}}</h3>-->
                 </div>
             </div>
             {% if extension=='pdf' %}

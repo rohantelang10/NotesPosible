@@ -1,0 +1,44 @@
+Hello, i  am Rohan Telang. I have perceived my bachelors in computer application and pursuing  masters in the same. I have experience in Python programming language.
+Academic Background- BCA(Completed), MCA(pursuing)
+About - Software Developer (Back-end)
+Languages (worked on) - Php, C/C++, Python, JavaScript
+Back-end Languages - Php (v8), Python 3(flask, django frameworks, Google oauth2 API)
+Front-end : Html5, Css3 , Bootstrap4, Java-Script
+Data base- RDBMS(SQL, SQLite)
+Projects - 
+	Musify Webapplication - https://github.com/rohantelang10/Musify
+	Classic Snake - https://github.com/rohantelang10/ClassicSnake
+
+
+
+Hello, I am Aman verma. I have perceived my bachelors in computer application and pursuing  masters in the same. I have experience in Python programming language.
+Academic Background- BCA(Completed), MCA(pursuing)
+About - Software Developer (Back-end)
+Languages (worked on) - Php, C/C++, Python, JavaScript, flutter, dart.
+Back-end Languages - Php (v8), Python 3(flask, django frameworks, Google oauth2 API)
+Front-end : Html5, Css3 , Bootstrap4, Java-Script
+Data base- RDBMS(SQL, SQLite)
+Project - 
+	Universal Shelf - (web application or organising pdf files) - on https://github.com/Commando16
+	say it - chatting web application - on https://github.com/Commando16
+	TaxiTravelIndore - website - on https://github.com/Commando16
+	
+
+
+
+Hello, I am Aman Goyal. I have perceived my bachelors in Computer Science(BTECh). I have experience in Python programming language.
+Academic Background- Btech(Computer Science)
+About - Software Developer (Back-end)
+Languages (worked on) - Php, C/C++, Python
+Back-end Languages - Php (v8), Python 3(flask)
+Data base- RDBMS(SQL, SQLite)
+
+
+
+
+team project - 
+ 	Website for Bindal Developer Company- https://www.bindaldevelopers.net/
+ 	Code Pointer website - https://codepointer.000webhostapp.com/
+	Notes possible website - https://github.com/rohantelang10/NotesPosible
+	Dairy website - https://github.com/rohantelang10/Dairy
+	Hand Made Crafts website - https://github.com/rohantelang10/HandMadeCrafts

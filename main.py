@@ -57,7 +57,7 @@ def index():
     if session.get("id") is None:
         return render_template('index.html')
     else:
-        fetch = Documentrecord.query.filter_by(Id=session['id']).all()
+        fetch = Documentrecord.query.all()
         return render_template('Home.html', data=fetch)
 @app.route('/LoginSignUp')
 def LoginSignUp():
@@ -88,10 +88,7 @@ def authorize():
 
 
     result = Userinfo.query.filter_by(Id=r.json()['id']).all()
-    resulttype = type(result)
     result = len(result)
-    print(resulttype)
-    print(result)
     def set_session():
         #session['username'] = (r.json()['email']).split('@')[0]
         session['id'] = r.json()['id']
@@ -137,6 +134,7 @@ def documentupload():
                 Next_SNo = 1
             else:
                 Next_SNo = (result[-1].SNo)+1
+
             f = request.files['UploadDocument']
             Path = str(Next_SNo)+'_'+secure_filename(f.filename)
             basedirectory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -159,6 +157,7 @@ def documentupload():
         return render_template("documentupload.html")
     else:
         return "Oops, something went wrong!"
+
 
 @app.route('/docopener/<string:sno>')
 def docopener(sno):
@@ -192,6 +191,17 @@ def deletefile(sno):
     db.session.delete(row)
     db.session.commit()
     return redirect(url_for('myuploads'))
+
+@app.route('/subscription')
+def subscription():
+    user = Userinfo.query.all()
+    return render_template('Subscription.html', user=user)
+
+@app.route('/profile/<string:sn>')
+def profile(sn):
+    user = Userinfo.query.filter_by(SNo=sn).one()
+    document = Documentrecord.query.filter_by(Id=user.Id).all()
+    return render_template('Profile.html', docCount=len(document), document=document, user=user)
 
 @app.route('/logout')
 def logout():
