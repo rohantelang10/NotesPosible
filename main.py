@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 import os
 import requests
+from security import safe_requests
 
 # insantiating Flask class object in variable "app" 
 app = Flask(__name__)
@@ -82,7 +83,7 @@ def authorize():
     })
     access_token = r.json()['access_token']
     #print(access_token)
-    r = requests.get(f"https://www.googleapis.com/oauth2/v2/userinfo?access_token={access_token}")
+    r = safe_requests.get(f"https://www.googleapis.com/oauth2/v2/userinfo?access_token={access_token}")
 
     #connection = db.session.connection()
 
