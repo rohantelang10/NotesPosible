@@ -67,7 +67,7 @@ def LoginSignUp():
         session["next"] = request.args.get("next")
     return redirect(
 
-        f"https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.profile&access_type=offline&include_granted_scopes=true&response_type=code&redirect_uri=http://127.0.0.1:5000/authorize&client_id=891944377515-bg8r7phbmiolc8bb29jiqkf9rjnp4e4s.apps.googleusercontent.com")
+        "https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.profile&access_type=offline&include_granted_scopes=true&response_type=code&redirect_uri=http://127.0.0.1:5000/authorize&client_id=891944377515-bg8r7phbmiolc8bb29jiqkf9rjnp4e4s.apps.googleusercontent.com")
 
 
 @app.route('/authorize')
