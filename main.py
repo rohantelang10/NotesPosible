@@ -79,10 +79,10 @@ def authorize():
     "code" : request.args.get("code"),
     "grant_type" : "authorization_code",
     "redirect_uri" : "http://127.0.0.1:5000/authorize",
-    })
+    }, timeout=60)
     access_token = r.json()['access_token']
     #print(access_token)
-    r = requests.get(f"https://www.googleapis.com/oauth2/v2/userinfo?access_token={access_token}")
+    r = requests.get(f"https://www.googleapis.com/oauth2/v2/userinfo?access_token={access_token}", timeout=60)
 
     #connection = db.session.connection()
 
